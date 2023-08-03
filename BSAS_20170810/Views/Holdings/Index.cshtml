@@ -1,0 +1,74 @@
+﻿@model IEnumerable<BSAS_20170810.Models.Holding>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Held Spares</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoldingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            Condition
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartNumber)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NSN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoldingName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.HoldingId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.HoldingId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.HoldingId })
+            </td>
+        </tr>
+    }
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

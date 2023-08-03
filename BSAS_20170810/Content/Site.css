@@ -1,0 +1,174 @@
+﻿body {
+    font-family: Verdana;
+    padding-top: 66px;
+    padding-bottom: 20px;
+}
+
+hr {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+label {
+    font-size: 16px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: bold;
+    border-color: #333;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #ccc;
+}
+
+
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"],
+.radio-inline input[type="radio"] {
+    transform: scale(2);
+}
+
+.row {
+    width: 100%;
+    margin: auto;
+}
+
+.table {
+    border-top: 2px solid #ccc;
+}
+
+/*****NAVBAR STYLING*****/
+.img-thumbnail {
+    height: 40px;
+    width: 75px;
+}
+
+.navbar {
+    min-height: 55px;
+    border-radius: 5px;
+}
+
+.navbar-brand {
+    padding: 13px;
+}
+
+.navbar-inverse {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    margin: 7.5px -15px;
+}
+
+/*****REGISTER VIEW STYLING*****/
+.register-container {
+    width: 75%;
+    margin: auto;
+}
+
+/*****LOG IN VIEW STYLING*****/
+.checkbox-inline input[type="checkbox"] {
+    margin: 2px 0 0;
+}
+
+.form-horizontal .checkbox-inline {
+    padding-top: 0;
+}
+#loginForm {
+    width: 75%;
+    margin: auto;
+}
+
+.page-title {
+    width: 100%;
+    text-align: center;
+}
+
+/*****STATIONS VIEW STYLING*****/
+/***ALL STATIONS***/
+.list-stns .btn {
+    padding: 2px 4px;
+}
+
+/***CREATE STATION***/
+
+
+/*****ADMIN VIEW STYLING*****/
+/***ALL USERS***/
+.search-form {
+    width: 48%;
+    display: inline-flex;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.search-form label {
+    margin-top: 5px;
+}
+
+.search-form .btn {
+    padding: 3px 10px;
+}
+
+/***ALL ROLES***/
+.add-role-btn {
+    float: right;
+}
+
+/***CREATE ROLE***/
+.create-role {
+    width: 75%;
+    margin: auto;
+}
+
+/*****DEMANDS VIEW STYLING*****/
+/***ALL DEMANDS***/
+
+/***DEMAND ITEMS***/
+.add-dmd-items .btn {
+    padding: 4px;
+}
+
+/***CREATE VIEW***/
+.create-demand {
+    width: 75%;
+    margin: auto;
+}
+
+.create-demand .control-label {
+    padding-top: 6px;
+}
+/***DETAILS VIEW***/
+.demand-details {
+    width: 75%;
+    margin: auto;
+}
+.dl-horizontal dt, .dl-horizontal dd {
+    padding-bottom: 5px;
+}
+
+/***EDIT VIEW***/

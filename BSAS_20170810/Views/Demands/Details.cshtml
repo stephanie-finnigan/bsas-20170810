@@ -1,0 +1,84 @@
+﻿@model BSAS_20170810.Models.Demand
+
+@{
+    ViewBag.Title = "Demand Details";
+}
+
+<div class="page-title">
+    <h2>@ViewBag.Title</h2>
+</div>
+<hr />
+<div class="demand-details">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FullName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialInstructions)
+        </dt>
+        <dd>
+            @Html.TextAreaFor(model => model.SpecialInstructions, new { @class = "form-control", @disabled = "disabled", @rows = 3 })
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+        <dd>
+            @Html.TextAreaFor(model => model.Remarks, new { @class = "form-control", @disabled = "disabled", @rows = 3 })
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmitDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SubmitDate, new { htmlAttributes = new { @class = "form-control" } })
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDespatched)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateDespatched)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDelivered)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateDelivered)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandItems)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>NSN</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                </tr>
+                @foreach (var item in Model.DemandItems)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Holding.NSN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Holding.HoldingName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Holding.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ItemQuantity)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DemandId }, new { @class = "btn btn-default" })
+</p>

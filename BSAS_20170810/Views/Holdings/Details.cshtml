@@ -1,0 +1,58 @@
+﻿@model BSAS_20170810.Models.Holding
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Holding</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoldingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoldingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityInStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityInStock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit",null, new { @id = Model.HoldingId }, new { @class = "btn btn-default"}) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default"})
+</p>

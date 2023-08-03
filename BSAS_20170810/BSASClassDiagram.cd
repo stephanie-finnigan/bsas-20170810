@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BSAS_20170426.Models.Demand" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAgBMAAAAAAAgAQAAAAwAAAAAgAAAAAAAACAAAQA=</HashCode>
+      <FileName>Models\Demand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSAS_20170426.Models.DemandInvoice" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAECAAUAAABAAAAAAAAAAAAAAAggAAAAIAAABA=</HashCode>
+      <FileName>Models\DemandInvoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSAS_20170426.Models.DemandItem" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAIAAAAAAgAAAAAAgAAAAAAAAAAAAAACAAAAQ=</HashCode>
+      <FileName>Models\DemandItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSAS_20170426.Models.Holding">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAgACAAQAAAAAAAACAAAAAAAAAAgAAACAI=</HashCode>
+      <FileName>Models\Holding.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BSAS_20170426.Models.HoldingCategory" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HoldingCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSAS_20170426.Models.Invoice" Collapsed="true">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAIAAAAAAAAAAAAAwAAAAAAAAAAAAEAAIAAAA=</HashCode>
+      <FileName>Models\Invoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSAS_20170426.Models.Station" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAAAAAAIAAAAAAAAAEAAEAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Station.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSAS_20170426.Models.StationRegion" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\StationRegion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BSAS_20170426.Models.DemandStatus" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAhAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DemandStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

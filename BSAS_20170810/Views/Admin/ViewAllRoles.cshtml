@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BSAS_20170810.Models.RoleDTO>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "All Roles";
+}
+
+<div class="page-title">
+    <h2>@ViewBag.Title</h2>
+</div>
+<p class="add-role-btn">
+    @Html.ActionLink("Add Role", "AddRole", null, new { @class = "btn btn-default" })
+</p>
+<div class="all-roles">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.roleName)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.roleName)
+                </td>
+                <td>
+                    @if (item.roleName.ToLower() != "administrator")
+                    {
+                        @Html.ActionLink("Delete", "DeleteUserRole", new { RoleName = item.roleName },
+                new { onclick = "return confirm('Are you sure you wish to delete this role?');" })
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+</p>

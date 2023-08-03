@@ -1,0 +1,91 @@
+﻿@model BSAS_20170810.ViewModels.DemandItemViewModel
+
+@{
+    ViewBag.Title = "Demand Items";
+}
+
+<div class="page-title">
+    <h2>Add Items to Demand</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="add-dmd-items">
+        <table class="table">
+            <tr>
+                <th>
+                    Category
+                </th>
+                <th>
+                    NSN
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    External Part Number
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Holdings)
+            {
+                @Html.HiddenFor(model => model.Demand.DemandId)
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NSN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HoldingName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartNumber)
+                    </td>
+                    <td>
+                        @Html.DropDownList("qty-" + item.HoldingId, (SelectList)ViewData["ItemQuantity"], null, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Add", "AddItem", "Demands", new { id = item.HoldingId, demandId = Model.Demand.DemandId, qty = 1 }, new { @class = "btn btn-default", @id = "holding-" + item.HoldingId })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+<div>
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+<script>
+    @foreach (var item in Model.Holdings)
+    {
+        <text>
+    $('#qty-@(item.HoldingId)').change(function (e) {
+        e.preventDefault();
+        var qty = $('#qty-@(item.HoldingId)').val();
+        var url = $('#holding-@(item.HoldingId)').attr('href');
+        url = url.substring(0, url.length - 1)
+        url += qty;
+        $('#holding-@(item.HoldingId)').attr('href', url);
+        $('#qty-@(item.HoldingId)').trigger('click');
+    });
+        </text>
+    }
+</script>
+
+}

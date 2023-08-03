@@ -1,0 +1,8 @@
+﻿@model DateTime?
+<div class="editor-label">
+    @Html.Label("")
+</div>
+<div class="editor-field">
+    @Html.TextBox("", String.Format("{0:MM/dd/yyyy}", (Model == DateTime.MinValue) ? null : Model), new { @class = "text" })
+</div>
+

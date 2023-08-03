@@ -1,0 +1,114 @@
+﻿@model BSAS_20170810.ViewModels.DemandDataViewModel
+
+@{
+    ViewBag.Title = "Demands";
+}
+
+<h2>Demands</h2>
+<br />
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Submit Date
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Demand Items
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Data Despatched
+            </th>
+            <th>
+                Date Delivered
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Demands)
+        {
+            string selectedRow = "";
+            if (item.DemandId == ViewBag.DemandId)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubmitDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Surname)
+                </td>
+                <td>
+                    @Html.ActionLink("Show Items", "Index", new { id = item.DemandId })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.StatusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateDespatched)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateDelivered)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.DemandId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.DemandId }) |
+                    @Html.ActionLink("Add Item", "Items", new { id = item.DemandId })
+                </td>
+            </tr>
+        }
+    </table>
+
+    if (Model.DemandItems != null)
+    {
+        <h3>Items on This Demand</h3>
+        <table class="table">
+            <tr>
+                <th>
+                    NSN
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Quantity
+                </th>
+            </tr>
+
+            @foreach (var item in Model.DemandItems)
+            {
+                string selectedRow = "";
+                if (item.DemandItemId == ViewBag.DemandItemId)
+                {
+                    selectedRow = "success";
+                }
+                <tr class="@selectedRow">
+                    <td>
+                        @item.Holding.NSN
+                    </td>
+                    <td>
+                        @item.Holding.HoldingName
+                    </td>
+                    <td>
+                        @item.ItemQuantity
+                    </td>
+                    <td></td>
+                </tr>
+            }
+        </table>
+        <br />
+        <div>
+            
+        </div>
+    }
+}
